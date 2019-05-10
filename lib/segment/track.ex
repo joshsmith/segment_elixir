@@ -1,5 +1,5 @@
 defmodule Segment.Track do
-  @derive [Poison.Encoder]
+  @derive Jason.Encoder
   @method "track"
 
   defstruct [

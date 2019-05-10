@@ -1,5 +1,5 @@
 defmodule Segment.Screen do
-  @derive [Poison.Encoder]
+  @derive Jason.Encoder
   @method "screen"
 
   defstruct [

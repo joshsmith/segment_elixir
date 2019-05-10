@@ -1,27 +1,27 @@
 defmodule Segment do
   @moduledoc """
-  Provides the api for sending data to Segment.io.
+  Provides the API for sending data to Segment.
   """
 
-  alias Segment.{Track, Identify, Screen, Alias, Group, Page, Context}
+  use Application
 
-  @module Application.get_env(:segment, :api) || Segment.Server
+  @api Application.get_env(:segment, :api) || Segment.Server
 
-  defdelegate send_track(t), to: @module
-  defdelegate send_track(user_id, event, properties \\ %{}, context \\ Context.new()), to: @module
+  def start(_type, _args) do
+    import Supervisor.Spec, warn: false
 
-  defdelegate send_identify(i), to: @module
-  defdelegate send_identify(user_id, traits \\ %{}, context \\ Context.new()), to: @module
+    children = [
+      {@api, []}
+    ]
 
-  defdelegate send_screen(s), to: @module
-  defdelegate send_screen(user_id, name \\ "", properties \\ %{}, context \\ Context.new()), to: @module
+    opts = [strategy: :one_for_one, name: Segment.Supervisor]
+    Supervisor.start_link(children, opts)
+  end
 
-  defdelegate send_alias(a), to: @module
-  defdelegate send_alias(user_id, previous_id, context \\ Context.new()), to: @module
-
-  defdelegate send_group(g), to: @module
-  defdelegate send_group(user_id, group_id, traits \\ %{}, context \\ Context.new()), to: @module
-
-  defdelegate send_page(p), to: @module
-  defdelegate send_page(user_id, name \\ "", properties \\ %{}, context \\ Context.new()), to: @module
+  defdelegate track(t), to: @api
+  defdelegate identify(i), to: @api
+  defdelegate screen(s), to: @api
+  defdelegate alias_user(a), to: @api
+  defdelegate group(g), to: @api
+  defdelegate page(p), to: @api
 end

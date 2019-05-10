@@ -1,5 +1,5 @@
 defmodule Segment.Page do
-  @derive [Poison.Encoder]
+  @derive Jason.Encoder
   @method "page"
 
   defstruct [

@@ -1,0 +1,61 @@
+[
+  {
+    "request": {
+      "body": "{\"anonymousId\":null,\"context\":{\"active\":null,\"app\":null,\"campaign\":null,\"device\":null,\"ip\":null,\"library\":{\"name\":\"segment_elixir\",\"version\":\"2.0.0-rc.1\"},\"locale\":null,\"location\":null,\"network\":null,\"os\":null,\"page\":null,\"referrer\":null,\"screen\":null,\"timezone\":null,\"traits\":null,\"userAgent\":null},\"event\":\"Test2 Event\",\"integrations\":null,\"method\":\"track\",\"properties\":{},\"timestamp\":null,\"userId\":\"12345\"}",
+      "headers": {
+        "accept": "application/json",
+        "Content-Type": "application/json"
+      },
+      "method": "post",
+      "options": {
+        "basic_auth": "***"
+      },
+      "request_body": "",
+      "url": "https://api.segment.io/v1/track"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\n  \"success\": true\n}",
+      "headers": {
+        "Date": "Fri, 10 May 2019 14:20:23 GMT",
+        "Content-Type": "application/json",
+        "Content-Length": "21",
+        "Connection": "keep-alive",
+        "Vary": "Origin"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  },
+  {
+    "request": {
+      "body": "{\"anonymousId\":null,\"context\":{\"active\":null,\"app\":null,\"campaign\":null,\"device\":null,\"ip\":null,\"library\":{\"name\":\"segment_elixir\",\"version\":\"2.0.0-rc.1\"},\"locale\":null,\"location\":null,\"network\":null,\"os\":null,\"page\":null,\"referrer\":null,\"screen\":null,\"timezone\":null,\"traits\":null,\"userAgent\":null},\"event\":\"Test Event\",\"integrations\":null,\"method\":\"track\",\"properties\":{},\"timestamp\":null,\"userId\":\"343434\"}",
+      "headers": {
+        "accept": "application/json",
+        "Content-Type": "application/json"
+      },
+      "method": "post",
+      "options": {
+        "basic_auth": [
+          null,
+          ""
+        ]
+      },
+      "request_body": "",
+      "url": "https://api.segment.io/v1/track"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\n  \"success\": true\n}",
+      "headers": {
+        "Date": "Fri, 10 May 2019 14:20:23 GMT",
+        "Content-Type": "application/json",
+        "Content-Length": "21",
+        "Connection": "keep-alive",
+        "Vary": "Origin"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

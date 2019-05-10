@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.20.2">
     <meta name="project" content="segment v2.0.0-rc.1">
-    <title>Segment — segment v2.0.0-rc.1</title>
+    <title>Segment.Analytics — segment v2.0.0-rc.1</title>
     <link rel="stylesheet" href="dist/html-d9f58a6320b5bfa6dd77.css" />
     <script src="dist/sidebar_items-79f98d1b1b.js"></script>
       <script src="docs_config.js"></script>
@@ -67,12 +67,9 @@ segment      </a>
 
       <h1>
         <small class="app-vsn">segment v2.0.0-rc.1</small>
-Segment              </h1>
+Segment.Analytics              </h1>
 
 
-        <section id="moduledoc">
-<p>Provides the API for sending data to Segment.</p>
-        </section>
 
         <section id="summary" class="details-list">
           <h1 class="section-heading">
@@ -90,37 +87,61 @@ Segment              </h1>
   <div class="summary-signature">
     <a href="#alias_user/1">alias_user(a)</a>
   </div>
-    <div class="summary-synopsis"><p>See <a href="Segment.Server.html#alias_user/1"><code class="inline">Segment.Server.alias_user/1</code></a>.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#alias_user/3">alias_user(user_id, previous_id, context \\ Context.new())</a>
+  </div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#group/1">group(g)</a>
   </div>
-    <div class="summary-synopsis"><p>See <a href="Segment.Server.html#group/1"><code class="inline">Segment.Server.group/1</code></a>.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#group/4">group(user_id, group_id, traits \\ %{}, context \\ Context.new())</a>
+  </div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#identify/1">identify(i)</a>
   </div>
-    <div class="summary-synopsis"><p>See <a href="Segment.Server.html#identify/1"><code class="inline">Segment.Server.identify/1</code></a>.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#identify/3">identify(user_id, traits \\ %{}, context \\ Context.new())</a>
+  </div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#page/1">page(p)</a>
   </div>
-    <div class="summary-synopsis"><p>See <a href="Segment.Server.html#page/1"><code class="inline">Segment.Server.page/1</code></a>.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#page/4">page(user_id, name \\ &quot;&quot;, properties \\ %{}, context \\ Context.new())</a>
+  </div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#screen/1">screen(s)</a>
   </div>
-    <div class="summary-synopsis"><p>See <a href="Segment.Server.html#screen/1"><code class="inline">Segment.Server.screen/1</code></a>.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#screen/4">screen(user_id, name \\ &quot;&quot;, properties \\ %{}, context \\ Context.new())</a>
+  </div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#track/1">track(t)</a>
   </div>
-    <div class="summary-synopsis"><p>See <a href="Segment.Server.html#track/1"><code class="inline">Segment.Server.track/1</code></a>.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#track/4">track(user_id, event, properties \\ %{}, context \\ Context.new())</a>
+  </div>
 </div>
   </div>
         </section>
@@ -142,7 +163,19 @@ Functions          </h1>
     <h1 class="signature">alias_user(a)</span>
           </div>
   <section class="docstring">
-<p>See <a href="Segment.Server.html#alias_user/1"><code class="inline">Segment.Server.alias_user/1</code></a>.</p>
+  </section>
+</section>
+<section class="detail" id="alias_user/3">
+  
+    <span id="alias_user/2"></span>
+  <div class="detail-header">
+    <a href="#alias_user/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">alias_user(user_id, previous_id, context \\ Context.new())</span>
+          </div>
+  <section class="docstring">
   </section>
 </section>
 <section class="detail" id="group/1">
@@ -154,7 +187,21 @@ Functions          </h1>
     <h1 class="signature">group(g)</span>
           </div>
   <section class="docstring">
-<p>See <a href="Segment.Server.html#group/1"><code class="inline">Segment.Server.group/1</code></a>.</p>
+  </section>
+</section>
+<section class="detail" id="group/4">
+  
+    <span id="group/2"></span>
+
+    <span id="group/3"></span>
+  <div class="detail-header">
+    <a href="#group/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">group(user_id, group_id, traits \\ %{}, context \\ Context.new())</span>
+          </div>
+  <section class="docstring">
   </section>
 </section>
 <section class="detail" id="identify/1">
@@ -166,7 +213,21 @@ Functions          </h1>
     <h1 class="signature">identify(i)</span>
           </div>
   <section class="docstring">
-<p>See <a href="Segment.Server.html#identify/1"><code class="inline">Segment.Server.identify/1</code></a>.</p>
+  </section>
+</section>
+<section class="detail" id="identify/3">
+  
+    <span id="identify/1"></span>
+
+    <span id="identify/2"></span>
+  <div class="detail-header">
+    <a href="#identify/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">identify(user_id, traits \\ %{}, context \\ Context.new())</span>
+          </div>
+  <section class="docstring">
   </section>
 </section>
 <section class="detail" id="page/1">
@@ -178,7 +239,23 @@ Functions          </h1>
     <h1 class="signature">page(p)</span>
           </div>
   <section class="docstring">
-<p>See <a href="Segment.Server.html#page/1"><code class="inline">Segment.Server.page/1</code></a>.</p>
+  </section>
+</section>
+<section class="detail" id="page/4">
+  
+    <span id="page/1"></span>
+
+    <span id="page/2"></span>
+
+    <span id="page/3"></span>
+  <div class="detail-header">
+    <a href="#page/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">page(user_id, name \\ &quot;&quot;, properties \\ %{}, context \\ Context.new())</span>
+          </div>
+  <section class="docstring">
   </section>
 </section>
 <section class="detail" id="screen/1">
@@ -190,7 +267,23 @@ Functions          </h1>
     <h1 class="signature">screen(s)</span>
           </div>
   <section class="docstring">
-<p>See <a href="Segment.Server.html#screen/1"><code class="inline">Segment.Server.screen/1</code></a>.</p>
+  </section>
+</section>
+<section class="detail" id="screen/4">
+  
+    <span id="screen/1"></span>
+
+    <span id="screen/2"></span>
+
+    <span id="screen/3"></span>
+  <div class="detail-header">
+    <a href="#screen/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">screen(user_id, name \\ &quot;&quot;, properties \\ %{}, context \\ Context.new())</span>
+          </div>
+  <section class="docstring">
   </section>
 </section>
 <section class="detail" id="track/1">
@@ -202,7 +295,21 @@ Functions          </h1>
     <h1 class="signature">track(t)</span>
           </div>
   <section class="docstring">
-<p>See <a href="Segment.Server.html#track/1"><code class="inline">Segment.Server.track/1</code></a>.</p>
+  </section>
+</section>
+<section class="detail" id="track/4">
+  
+    <span id="track/2"></span>
+
+    <span id="track/3"></span>
+  <div class="detail-header">
+    <a href="#track/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">track(user_id, event, properties \\ %{}, context \\ Context.new())</span>
+          </div>
+  <section class="docstring">
   </section>
 </section>
           </div>

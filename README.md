@@ -1,13 +1,35 @@
-analytics-elixir
+segment_elixir
 ================
 
-analytics-elixir is a non-supported third-party client for [Segment](https://segment.com)
+segment_elixir is a non-supported third-party client for [Segment](https://segment.com)
 
-## Install
+## Installation
 
-Add the following to deps section of your mix.exs: `{:segment, github: "stueccles/analytics-elixir"}`
+In `mix.exs`, add the `segment_elixir` dependency:
 
-and then `mix deps.get`
+```elixir
+def deps do
+  # Get the latest from hex.pm.
+  [
+    {:segment_elixir, "~> 2.0"},
+  ]
+end
+```
+
+And then run `mix deps.get` to install it.
+
+Add the following configuration to your `config.ex`:
+
+```elixir
+config :segment, write_key: "2iFFnRsCfi"
+```
+
+In tests, you can set the configuration to use the sandbox:
+
+```elixir
+# config/test.exs
+config :segment, api: Segment.Sandbox
+```
 
 ## Usage
 
@@ -16,104 +38,121 @@ Configure Segment with your write_key
 config :segment, write_key: System.get_env("SEGMENT_WRITE_KEY")
 ```
 
-There are then two ways to call the different methods on the API.
-A basic way passing in arguments or by passing a full Struct
-with all the data for the API (allowing Context and Integrations to be set)
+You can call the different methods on the API (like `track`, `identify`, etc.) either by:
 
-## Usage in Phoenix
+1. Passing in arguments, or:
+2. Passing a full struct (which allows you to set Context and Integrations)
 
-This is how I add to a Phoenix project (may not be your preferred way)
+### `track`
 
-1. Add the following to deps section of your mix.exs: `{:segment, github: "stueccles/analytics-elixir"}`
-   and then `mix deps.get`
-2. Set the config variable for your write_key in your application
-ie.
+```elixir
+Segment.track(user_id, event, %{property1: "", property2: ""})
 ```
-config :segment, write_key: "2iFFnRsCfi"
-```
-3. (optional) Set the config variable for which api to use (test, or real)
-ie.
-```
-#config/test.exs
-config :segment, api: Segment.Sandbox
-```
-### Track
-```
-Segment.send_track(user_id, event, %{property1: "", property2: ""})
-```
+
 or the full way using a struct with all the possible options for the track call
-```
-%Segment.Track{ userId: "sdsds",
-                          event: "eventname",
+
+```elixir
+%Segment.Track{
+  userId: "foo",
+  vent: "eventname",
                           properties: %{property1: "", property2: ""}
-                        }
-  |> Segment.send_track
+ }
+ > Segment.track
 ```
 
-### Identify
+### `identify`
+
+```elixir
+Segment.identify(user_id, %{trait1: "", trait2: ""})
 ```
-Segment.send_identify(user_id, %{trait1: "", trait2: ""})
-```
+
 or the full way using a struct with all the possible options for the identify call
-```
-%Segment.Identify{ userId: "sdsds",
-                             traits: %{trait1: "", trait2: ""}
-                           }
-  |> Segment.send_identify
+
+```elixir
+%Segment.Identify{
+  userId: "foo",
+  %{
+    trait1: "",
+    trait2: ""
+  }
+}
+|> Segment.identify
 ```
 
-### Screen
+### `screen`
+
+```elixir
+Segment.screen(user_id, name)
 ```
-Segment.send_screen(user_id, name)
-```
+
 or the full way using a struct with all the possible options for the screen call
-```
-%Segment.Screen{ userId: "sdsds",
-                           name: "dssd"
-                         }
-  |> Segment.send_screen
+
+```elixir
+%Segment.Screen{
+  userId: "foo",
+  name: "bar"
+}
+|> Segment.screen
 ```
 
-### Alias
-```
-Segment.send_alias(user_id, previous_id)
-```
-or the full way using a struct with all the possible options for the alias call
-```
-%Segment.Alias{ userId: "sdsds",
-                          previousId: "dssd"
-                         }
-  |> Segment.send_alias
+### `alias`
+
+> Note that we need to use `alias_user` here instead of Segment's `alias`, due to `alias` being reserved in Elixir.
+
+```elixir
+Segment.alias_user(user_id, previous_id)
 ```
 
-### Group
+or the full way using a struct with all the possible options for the alias call:
+
+```elixir
+%Segment.Alias{
+  userId: "foo",
+  previousId: "bar"
+}
+|> Segment.alias_user
 ```
-Segment.send_group(user_id, group_id)
+
+### `group`
+
+```elixir
+Segment.group(user_id, group_id)
 ```
+
 or the full way using a struct with all the possible options for the group call
-```
-%Segment.Group{ userId: "sdsds",
-                          groupId: "dssd"
-                         }
-  |> Segment.send_group
+
+```elixir
+%Segment.Group{
+  userId: "foo",
+  groupId: "bar"
+}
+|> Segment.group
 ```
 
-### Page
+### `page`
+
+```elixir
+Segment.page(user_id, name)
 ```
-Segment.send_page(user_id, name)
-```
+
 or the full way using a struct with all the possible options for the page call
-```
-%Segment.Page{ userId: "sdsds",
-                         name:   "dssd"
-                       }
-  |> Segment.send_page
+
+```elixir
+%Segment.Page{
+  userId: "foo",
+  name: "bar"
+}
+|> Segment.page
 ```
 
 ## Running tests
 
-There are not many tests at the moment. But you can run a live test on your segment
-account by running.
-```
+There are not many tests at the moment. But you can run a live test on your segment account by running:
+
+```elixir
 SEGMENT_KEY=yourkey mix test
 ```
+
+## Acknowledgements
+
+This is a fork from stueccles' [analytics-elixir](https://github.com/stueccles/analytics-elixir) incorporating work done by lswith [in his fork](https://github.com/lswith/analytics-elixir).

@@ -1,73 +1,73 @@
 defmodule Segment.Analytics do
-  alias Segment.Analytics.Context
-  alias Segment.Analytics.Http
+  alias Segment.Context
+  alias Segment.Http
 
   require Logger
 
-  def track(t = %Segment.Analytics.Track{}) do
+  def track(t = %Segment.Track{}) do
     call(t)
   end
 
   def track(user_id, event, properties \\ %{}, context \\ Context.new) do
-    %Segment.Analytics.Track{ userId: user_id,
+    %Segment.Track{ userId: user_id,
                               event: event,
                               properties: properties,
                               context: context }
     |> call
   end
 
-  def identify(i = %Segment.Analytics.Identify{}) do
+  def identify(i = %Segment.Identify{}) do
     call(i)
   end
 
   def identify(user_id, traits \\ %{}, context \\ Context.new) do
-    %Segment.Analytics.Identify{  userId: user_id,
+    %Segment.Identify{  userId: user_id,
                                       traits: traits,
                                       context: context }
     |> call
   end
 
-  def screen(s = %Segment.Analytics.Screen{}) do
+  def screen(s = %Segment.Screen{}) do
     call(s)
   end
 
   def screen(user_id, name \\ "", properties \\ %{}, context \\ Context.new ) do
-    %Segment.Analytics.Screen{  userId: user_id,
+    %Segment.Screen{  userId: user_id,
                                     name: name,
                                     properties: properties,
                                     context: context }
     |> call
   end
 
-  def alias(a = %Segment.Analytics.Alias{}) do
+  def alias_user(a = %Segment.Alias{}) do
     call(a)
   end
 
-  def alias(user_id, previous_id, context \\ Context.new) do
-    %Segment.Analytics.Alias{ userId: user_id,
+  def alias_user(user_id, previous_id, context \\ Context.new) do
+    %Segment.Alias{ userId: user_id,
                                   previousId: previous_id,
                                   context: context }
     |> call
   end
 
-  def group(g = %Segment.Analytics.Group{}) do
+  def group(g = %Segment.Group{}) do
     call(g)
   end
 
   def group(user_id, group_id, traits \\ %{}, context \\ Context.new) do
-    %Segment.Analytics.Group{ userId: user_id,
+    %Segment.Group{ userId: user_id,
                                   groupId: group_id,
                                   traits: traits,
                                   context: context }
     |> call
   end
 
-  def page(p = %Segment.Analytics.Page{}) do
+  def page(p = %Segment.Page{}) do
     call(p)
   end
 
   def page(user_id, name \\ "", properties \\ %{}, context \\ Context.new ) do
-    %Segment.Analytics.Page{  userId: user_id,
+    %Segment.Page{  userId: user_id,
                                   name: name,
                                   properties: properties,
                                   context: context }
@@ -75,7 +75,7 @@ defmodule Segment.Analytics do
   end
 
   defp call(api) do
-    Task.async(fn -> post_to_segment(api.method, Poison.encode!(api)) end)
+    Task.async(fn -> post_to_segment(api.method, Jason.encode!(api)) end)
   end
 
   defp post_to_segment(function, body) do

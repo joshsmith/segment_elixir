@@ -4,14 +4,27 @@ defmodule AnalyticsElixir.Mixfile do
   def project do
     [
       app: :segment,
-      version: "1.1.0",
-      elixir: "~> 1.5",
       deps: deps(),
-      description: "analytics_elixir",
+      description: description(),
+      dialyzer: [
+        plt_add_apps: [:mix],
+      ],
+      elixir: "~> 1.8.1",
+      elixirc_paths: elixirc_paths(Mix.env()),
       package: package(),
       preferred_cli_env: [
-        vcr: :test, "vcr.delete": :test, "vcr.check": :test, "vcr.show": :test
+        coveralls: :test,
+        "coveralls.detail": :test,
+        "coveralls.post": :test,
+        "coveralls.html": :test,
+        vcr: :test,
+        "vcr.delete": :test,
+        "vcr.check": :test,
+        "vcr.show": :test
       ],
+      source_url: "https://github.com/joshsmith/segment_elixir/",
+      test_coverage: [tool: ExCoveralls],
+      version: "2.0.0-rc.1",
     ]
   end
 
@@ -20,26 +33,43 @@ defmodule AnalyticsElixir.Mixfile do
   # Type `mix help compile.app` for more information
   def application do
     [
-      mod: {Segment.Application, []},
-      extra_applications: [:logger],
+      applications: apps(Mix.env()),
+      mod: {Segment, []},
     ]
   end
 
+  # Specifies which paths to compile per environment.
+  defp elixirc_paths(:test), do: ["lib"]
+  defp elixirc_paths(_), do: ["lib"]
+
+  defp apps(:test), do: apps()
+  defp apps(_), do: apps()
+  defp apps(), do: [:logger]
+
   defp deps do
     [
-      {:httpoison, "~> 0.13"},
-      {:poison, "~> 3.1"},
-      {:ex_doc, ">= 0.0.0", only: :dev},
-      {:exvcr, "~> 0.9", only: :test},
+      {:dialyxir, "~> 1.0.0-rc.6", only: [:dev], runtime: false},
+      {:ex_doc, "~> 0.19", only: :dev, runtime: false},
+      {:excoveralls, "~> 0.8.1", only: :test},
+      {:exvcr, "~> 0.10", only: :test},
+      {:httpoison, "~> 1.5.1"},
+      {:inch_ex, "~> 0.5", only: [:dev, :test]},
+      {:jason, "~> 1.1"},
     ]
+  end
+
+  defp description do
+    """
+    A Segment client for Elixir.
+    """
   end
 
   defp package do
     [
       files: ["lib", "mix.exs", "README*", "LICENSE*"],
-      maintainers: ["Luke Swithenbank"],
+      maintainers: ["Josh Smith"],
       licenses: ["MIT"],
-      links: %{ "GitHub" => "https://github.com/lswith/analytics-elixir" }
+      links: %{ "GitHub" => "https://github.com/joshsmith/segment_elixir" }
     ]
   end
 end

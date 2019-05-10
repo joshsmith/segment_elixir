@@ -1,5 +1,5 @@
 defmodule Segment.Group do
-  @derive [Poison.Encoder]
+  @derive Jason.Encoder
   @method "group"
 
   defstruct [

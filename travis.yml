@@ -1,0 +1,27 @@
+language: elixir
+dist: trusty
+elixir:
+  - 1.7
+  - 1.8
+otp_release:
+  - 19.3
+  - 20.2
+matrix:
+  exclude:
+    - otp_release: 19.3
+      elixir: 1.8
+sudo: false
+env:
+  global:
+    - MIX_ENV=test
+cache:
+  directories:
+    - priv/plts
+script:
+  - mix coveralls.travis
+  - MIX_ENV=dev mix dialyzer --halt-exit-status
+after_script:
+  - mix inch.report
+notifications:
+  email:
+    on_success: never
