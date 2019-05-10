@@ -3,12 +3,25 @@ defmodule Segment do
   Provides the API for sending data to Segment.
   """
 
-  @module Application.get_env(:segment, :api) || Segment.Server
+  use Application
 
-  defdelegate track(t), to: @module
-  defdelegate identify(i), to: @module
-  defdelegate screen(s), to: @module
-  defdelegate alias_user(a), to: @module
-  defdelegate group(g), to: @module
-  defdelegate page(p), to: @module
+  @api Application.get_env(:segment, :api) || Segment.Server
+
+  def start(_type, _args) do
+    import Supervisor.Spec, warn: false
+
+    children = [
+      {@api, []}
+    ]
+
+    opts = [strategy: :one_for_one, name: Segment.Supervisor]
+    Supervisor.start_link(children, opts)
+  end
+
+  defdelegate track(t), to: @api
+  defdelegate identify(i), to: @api
+  defdelegate screen(s), to: @api
+  defdelegate alias_user(a), to: @api
+  defdelegate group(g), to: @api
+  defdelegate page(p), to: @api
 end
