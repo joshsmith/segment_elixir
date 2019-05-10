@@ -8,8 +8,10 @@ defmodule AnalyticsElixir.Mixfile do
       description: description(),
       dialyzer: [
         plt_add_apps: [:mix],
+        plt_add_deps: :app_tree,
+        plt_file: {:no_warn, "priv/plts/segment_elixir.plt"},
       ],
-      elixir: "~> 1.8.1",
+      elixir: "~> 1.7",
       elixirc_paths: elixirc_paths(Mix.env()),
       package: package(),
       preferred_cli_env: [
