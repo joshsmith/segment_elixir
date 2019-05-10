@@ -1,5 +1,5 @@
 defmodule Segment.Context do
-  @derive [Poison.Encoder]
+  @derive Jason.Encoder
   @library_name Mix.Project.get().project[:description]
   @library_version Mix.Project.get().project[:version]
 
