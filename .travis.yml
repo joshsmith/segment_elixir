@@ -6,6 +6,7 @@ elixir:
 otp_release:
   - 19.3
   - 20.2
+  - 21.3
 matrix:
   exclude:
     - otp_release: 19.3
@@ -19,7 +20,7 @@ cache:
     - priv/plts
 script:
   - mix coveralls.travis
-  - MIX_ENV=dev mix dialyzer --halt-exit-status
+  # - MIX_ENV=dev mix dialyzer --halt-exit-status
 after_script:
   - mix inch.report
 notifications:
