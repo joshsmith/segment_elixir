@@ -70,6 +70,7 @@ defmodule AnalyticsElixir.Mixfile do
     [
       files: ["lib", "mix.exs", "README*", "LICENSE*"],
       maintainers: ["Josh Smith"],
+      name: "segment_elixir",
       licenses: ["MIT"],
       links: %{ "GitHub" => "https://github.com/joshsmith/segment_elixir" }
     ]
