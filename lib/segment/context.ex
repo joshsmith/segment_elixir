@@ -1,4 +1,6 @@
 defmodule Segment.Context do
+  alias __MODULE__
+
   @derive Jason.Encoder
   @library_name Mix.Project.get().project[:description]
   @library_version Mix.Project.get().project[:version]
@@ -8,6 +10,7 @@ defmodule Segment.Context do
     :app,
     :campaign,
     :device,
+    :groupId,
     :ip,
     :library,
     :locale,
@@ -22,11 +25,13 @@ defmodule Segment.Context do
     :userAgent
   ]
 
-  def update(context = %__MODULE__{}) do
+  def update(context = %Context{}) do
     %{context | library: %{name: @library_name, version: @library_version}}
   end
 
-  def new do
-    update(%__MODULE__{})
+  def new(attrs \\ %{}) do
+    %Context{}
+    |> struct(attrs)
+    |> update
   end
 end
