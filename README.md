@@ -33,7 +33,6 @@ config :segment, api: Segment.Sandbox
 
 Make sure you reset the sandbox state between tests. 
 If you're using Phoenix this is as easy as adding:
-[](#sandbox-checkout)
 
 ```elixir
 # test/support/conn_case.ex
