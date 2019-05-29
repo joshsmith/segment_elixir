@@ -82,7 +82,7 @@ defmodule Segment.Sandbox do
     Agent.update(__MODULE__, fn state -> %{state | group_calls: [g | state.group_calls]} end)
   end
 
-  def get_group do
+  def get_group_calls do
     Agent.get(__MODULE__, &Map.get(&1, :group_calls))
   end
 
