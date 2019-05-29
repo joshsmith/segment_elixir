@@ -55,7 +55,7 @@ defmodule AnalyticsElixir.Mixfile do
       {:excoveralls, "~> 0.8.1", only: :test},
       {:exvcr, "~> 0.10", only: :test},
       {:httpoison, "~> 1.5.1"},
-      {:inch_ex, "~> 0.5", only: [:dev, :test]},
+      {:inch_ex, "~> 2.0", only: [:dev, :test]},
       {:jason, "~> 1.1"},
     ]
   end
