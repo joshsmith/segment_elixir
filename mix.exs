@@ -60,11 +60,7 @@ defmodule AnalyticsElixir.Mixfile do
     ]
   end
 
-  defp description do
-    """
-    A Segment client for Elixir.
-    """
-  end
+  defp description, do: "Segment client for Elixir"
 
   defp package do
     [
