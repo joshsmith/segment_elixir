@@ -174,6 +174,11 @@ assert "Trial Started" in tracked_events
 assert length(tracked_events) == 1
 ```
 
+Keep in mind that the returned events will not be in order they arrived in. For this you can simply reverse the list:
+```elixir
+get_track_calls() |> Enum.reverse()
+```
+
 ## Running tests
 
 There are not many tests at the moment. But you can run a live test on your segment account by running:
