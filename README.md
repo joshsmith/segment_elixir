@@ -31,6 +31,17 @@ In tests, you can set the configuration to use the sandbox:
 config :segment, api: Segment.Sandbox
 ```
 
+Make sure you reset the sandbox state between tests. 
+If you're using Phoenix this is as easy as adding:
+
+```elixir
+# test/support/conn_case.ex
+setup tags
+  :ok = Segment.Sandbox.checkout()
+  ...
+end
+```
+
 ## Usage
 
 Configure Segment with your write_key
@@ -143,6 +154,29 @@ or the full way using a struct with all the possible options for the page call
   name: "bar"
 }
 |> Segment.page
+```
+
+## Usage in tests
+
+Sandbox keeps track of events that occured since the last `Segment.Sandbox.checkout()` call.
+They can be accessed by following functions from `Segment.Sandbox` module:
+* `get_track_calls/0`
+* `get_identify_calls/0`
+* `get_screen_calls/0`
+* `get_alias_calls/0`
+* `get_group_calls/0`
+* `get_group_calls/0`
+
+Example usage:
+```elixir
+tracked_events = Segment.Sandbox.get_track_calls() |> Enum.map(& &1.event)
+assert "Trial Started" in tracked_events
+assert length(tracked_events) == 1
+```
+
+Keep in mind that the returned events will not be in order they arrived in. For this you can simply reverse the list:
+```elixir
+get_track_calls() |> Enum.reverse()
 ```
 
 ## Running tests
