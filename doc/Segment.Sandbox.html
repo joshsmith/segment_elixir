@@ -8,8 +8,7 @@
     <meta name="project" content="segment v2.0.0-rc.1">
     <title>Segment.Sandbox — segment v2.0.0-rc.1</title>
     <link rel="stylesheet" href="dist/html-d9f58a6320b5bfa6dd77.css" />
-      <link rel="canonical" href="https://hexdocs.pm/segment/Segment.Sandbox.html" />
-    <script src="dist/sidebar_items-0df2cb784f.js"></script>
+    <script src="dist/sidebar_items-2fa1a0d00f.js"></script>
       <script src="docs_config.js"></script>
     <script async src="dist/html-d9f58a6320b5bfa6dd77.js"></script>
     
@@ -105,38 +104,44 @@ data is correctly sent to segment.io.</p>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="#checkout/0">checkout()</a>
+  </div>
+    <div class="summary-synopsis"><p>Checkout function provides means to reset sandbox state to blank initial state.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="#child_spec/1">child_spec(arg)</a>
   </div>
     <div class="summary-synopsis"><p>Returns a specification to start this module under a supervisor.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#get_alias/0">get_alias()</a>
+    <a href="#get_alias_calls/0">get_alias_calls()</a>
   </div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#get_group/0">get_group()</a>
+    <a href="#get_group_calls/0">get_group_calls()</a>
   </div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#get_identify/0">get_identify()</a>
+    <a href="#get_identify_calls/0">get_identify_calls()</a>
   </div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#get_page/0">get_page()</a>
+    <a href="#get_page_calls/0">get_page_calls()</a>
   </div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#get_screen/0">get_screen()</a>
+    <a href="#get_screen_calls/0">get_screen_calls()</a>
   </div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#get_track/0">get_track()</a>
+    <a href="#get_track_calls/0">get_track_calls()</a>
   </div>
 </div>
 <div class="summary-row">
@@ -212,7 +217,7 @@ Functions          </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature">alias_user(a)</span>
-      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/sandbox.ex#L55" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/sandbox.ex#L68" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -229,12 +234,28 @@ Functions          </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature">alias_user(user_id, previous_id, context \\ Context.new())</span>
-      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/sandbox.ex#L63" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/sandbox.ex#L76" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
           </div>
   <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="checkout/0">
+    <div class="detail-header">
+    <a href="#checkout/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">checkout()</span>
+      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/sandbox.ex#L25" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+          </div>
+  <section class="docstring">
+<p>Checkout function provides means to reset sandbox state to blank initial state.</p>
   </section>
 </section>
 <section class="detail" id="child_spec/1">
@@ -244,7 +265,7 @@ Functions          </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature">child_spec(arg)</span>
-      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/sandbox.ex#L8" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/sandbox.ex#L7" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -254,28 +275,13 @@ Functions          </h1>
 <p>See <a href="https://hexdocs.pm/elixir/Supervisor.html"><code class="inline">Supervisor</code></a>.</p>
   </section>
 </section>
-<section class="detail" id="get_alias/0">
+<section class="detail" id="get_alias_calls/0">
     <div class="detail-header">
-    <a href="#get_alias/0" class="detail-link" title="Link to this function">
+    <a href="#get_alias_calls/0" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature">get_alias()</span>
-      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/sandbox.ex#L59" class="view-source" rel="help" title="View Source">
-       <span class="icon-code" aria-hidden="true"></span>
-       <span class="sr-only">View Source</span>
-     </a>
-          </div>
-  <section class="docstring">
-  </section>
-</section>
-<section class="detail" id="get_group/0">
-    <div class="detail-header">
-    <a href="#get_group/0" class="detail-link" title="Link to this function">
-      <span class="icon-link" aria-hidden="true"></span>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature">get_group()</span>
+    <h1 class="signature">get_alias_calls()</span>
       <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/sandbox.ex#L72" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
@@ -284,14 +290,14 @@ Functions          </h1>
   <section class="docstring">
   </section>
 </section>
-<section class="detail" id="get_identify/0">
+<section class="detail" id="get_group_calls/0">
     <div class="detail-header">
-    <a href="#get_identify/0" class="detail-link" title="Link to this function">
+    <a href="#get_group_calls/0" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature">get_identify()</span>
-      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/sandbox.ex#L31" class="view-source" rel="help" title="View Source">
+    <h1 class="signature">get_group_calls()</span>
+      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/sandbox.ex#L85" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -299,14 +305,14 @@ Functions          </h1>
   <section class="docstring">
   </section>
 </section>
-<section class="detail" id="get_page/0">
+<section class="detail" id="get_identify_calls/0">
     <div class="detail-header">
-    <a href="#get_page/0" class="detail-link" title="Link to this function">
+    <a href="#get_identify_calls/0" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature">get_page()</span>
-      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/sandbox.ex#L86" class="view-source" rel="help" title="View Source">
+    <h1 class="signature">get_identify_calls()</span>
+      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/sandbox.ex#L46" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -314,14 +320,14 @@ Functions          </h1>
   <section class="docstring">
   </section>
 </section>
-<section class="detail" id="get_screen/0">
+<section class="detail" id="get_page_calls/0">
     <div class="detail-header">
-    <a href="#get_screen/0" class="detail-link" title="Link to this function">
+    <a href="#get_page_calls/0" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature">get_screen()</span>
-      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/sandbox.ex#L45" class="view-source" rel="help" title="View Source">
+    <h1 class="signature">get_page_calls()</span>
+      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/sandbox.ex#L98" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -329,14 +335,29 @@ Functions          </h1>
   <section class="docstring">
   </section>
 </section>
-<section class="detail" id="get_track/0">
+<section class="detail" id="get_screen_calls/0">
     <div class="detail-header">
-    <a href="#get_track/0" class="detail-link" title="Link to this function">
+    <a href="#get_screen_calls/0" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature">get_track()</span>
-      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/sandbox.ex#L18" class="view-source" rel="help" title="View Source">
+    <h1 class="signature">get_screen_calls()</span>
+      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/sandbox.ex#L59" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+          </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="get_track_calls/0">
+    <div class="detail-header">
+    <a href="#get_track_calls/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_track_calls()</span>
+      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/sandbox.ex#L33" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -351,7 +372,7 @@ Functions          </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature">group(g)</span>
-      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/sandbox.ex#L68" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/sandbox.ex#L81" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -370,7 +391,7 @@ Functions          </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature">group(user_id, group_id, traits \\ %{}, context \\ Context.new())</span>
-      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/sandbox.ex#L77" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/sandbox.ex#L89" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -385,7 +406,7 @@ Functions          </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature">identify(i)</span>
-      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/sandbox.ex#L27" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/sandbox.ex#L42" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -404,7 +425,7 @@ Functions          </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature">identify(user_id, traits \\ %{}, context \\ Context.new())</span>
-      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/sandbox.ex#L36" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/sandbox.ex#L50" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -419,7 +440,7 @@ Functions          </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature">page(p)</span>
-      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/sandbox.ex#L82" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/sandbox.ex#L94" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -440,7 +461,7 @@ Functions          </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature">page(user_id, name \\ &quot;&quot;, properties \\ %{}, context \\ Context.new())</span>
-      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/sandbox.ex#L90" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/sandbox.ex#L102" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -455,7 +476,7 @@ Functions          </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature">screen(s)</span>
-      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/sandbox.ex#L41" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/sandbox.ex#L55" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -476,7 +497,7 @@ Functions          </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature">screen(user_id, name \\ &quot;&quot;, properties \\ %{}, context \\ Context.new())</span>
-      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/sandbox.ex#L50" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/sandbox.ex#L63" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -491,7 +512,7 @@ Functions          </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature">start_link(args)</span>
-      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/sandbox.ex#L10" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/sandbox.ex#L18" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -506,7 +527,7 @@ Functions          </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature">track(t)</span>
-      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/sandbox.ex#L14" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/sandbox.ex#L29" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -525,7 +546,7 @@ Functions          </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature">track(user_id, event, properties \\ %{}, context \\ Context.new())</span>
-      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/sandbox.ex#L22" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/sandbox.ex#L37" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>

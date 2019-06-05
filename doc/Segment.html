@@ -8,8 +8,7 @@
     <meta name="project" content="segment v2.0.0-rc.1">
     <title>Segment — segment v2.0.0-rc.1</title>
     <link rel="stylesheet" href="dist/html-d9f58a6320b5bfa6dd77.css" />
-      <link rel="canonical" href="https://hexdocs.pm/segment/Segment.html" />
-    <script src="dist/sidebar_items-0df2cb784f.js"></script>
+    <script src="dist/sidebar_items-2fa1a0d00f.js"></script>
       <script src="docs_config.js"></script>
     <script async src="dist/html-d9f58a6320b5bfa6dd77.js"></script>
     
@@ -100,9 +99,21 @@ Segment
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="#alias_user/3">alias_user(user_id, previous_id, context \\ Context.new())</a>
+  </div>
+    <div class="summary-synopsis"><p>See <a href="Segment.Server.html#alias_user/3"><code class="inline">Segment.Server.alias_user/3</code></a>.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="#group/1">group(g)</a>
   </div>
     <div class="summary-synopsis"><p>See <a href="Segment.Server.html#group/1"><code class="inline">Segment.Server.group/1</code></a>.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#group/4">group(user_id, group_id, traits \\ %{}, context \\ Context.new())</a>
+  </div>
+    <div class="summary-synopsis"><p>See <a href="Segment.Server.html#group/4"><code class="inline">Segment.Server.group/4</code></a>.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
@@ -112,15 +123,33 @@ Segment
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="#identify/3">identify(user_id, traits, context \\ Context.new())</a>
+  </div>
+    <div class="summary-synopsis"><p>See <a href="Segment.Server.html#identify/3"><code class="inline">Segment.Server.identify/3</code></a>.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="#page/1">page(p)</a>
   </div>
     <div class="summary-synopsis"><p>See <a href="Segment.Server.html#page/1"><code class="inline">Segment.Server.page/1</code></a>.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="#page/4">page(user_id, name, properties \\ %{}, context \\ Context.new())</a>
+  </div>
+    <div class="summary-synopsis"><p>See <a href="Segment.Server.html#page/4"><code class="inline">Segment.Server.page/4</code></a>.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="#screen/1">screen(s)</a>
   </div>
     <div class="summary-synopsis"><p>See <a href="Segment.Server.html#screen/1"><code class="inline">Segment.Server.screen/1</code></a>.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#screen/4">screen(user_id, name, properties \\ %{}, context \\ Context.new())</a>
+  </div>
+    <div class="summary-synopsis"><p>See <a href="Segment.Server.html#screen/4"><code class="inline">Segment.Server.screen/4</code></a>.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
@@ -133,6 +162,12 @@ Segment
     <a href="#track/1">track(t)</a>
   </div>
     <div class="summary-synopsis"><p>See <a href="Segment.Server.html#track/1"><code class="inline">Segment.Server.track/1</code></a>.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#track/4">track(user_id, event, properties \\ %{}, context \\ Context.new())</a>
+  </div>
+    <div class="summary-synopsis"><p>See <a href="Segment.Server.html#track/4"><code class="inline">Segment.Server.track/4</code></a>.</p></div>
 </div>
   </div>
         </section>
@@ -152,13 +187,31 @@ Functions          </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature">alias_user(a)</span>
-      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment.ex#L24" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment.ex#L32" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
           </div>
   <section class="docstring">
 <p>See <a href="Segment.Server.html#alias_user/1"><code class="inline">Segment.Server.alias_user/1</code></a>.</p>
+  </section>
+</section>
+<section class="detail" id="alias_user/3">
+  
+    <span id="alias_user/2"></span>
+  <div class="detail-header">
+    <a href="#alias_user/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">alias_user(user_id, previous_id, context \\ Context.new())</span>
+      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment.ex#L31" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+          </div>
+  <section class="docstring">
+<p>See <a href="Segment.Server.html#alias_user/3"><code class="inline">Segment.Server.alias_user/3</code></a>.</p>
   </section>
 </section>
 <section class="detail" id="group/1">
@@ -168,13 +221,33 @@ Functions          </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature">group(g)</span>
-      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment.ex#L25" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment.ex#L35" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
           </div>
   <section class="docstring">
 <p>See <a href="Segment.Server.html#group/1"><code class="inline">Segment.Server.group/1</code></a>.</p>
+  </section>
+</section>
+<section class="detail" id="group/4">
+  
+    <span id="group/2"></span>
+
+    <span id="group/3"></span>
+  <div class="detail-header">
+    <a href="#group/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">group(user_id, group_id, traits \\ %{}, context \\ Context.new())</span>
+      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment.ex#L34" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+          </div>
+  <section class="docstring">
+<p>See <a href="Segment.Server.html#group/4"><code class="inline">Segment.Server.group/4</code></a>.</p>
   </section>
 </section>
 <section class="detail" id="identify/1">
@@ -184,13 +257,31 @@ Functions          </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature">identify(i)</span>
-      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment.ex#L22" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment.ex#L26" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
           </div>
   <section class="docstring">
 <p>See <a href="Segment.Server.html#identify/1"><code class="inline">Segment.Server.identify/1</code></a>.</p>
+  </section>
+</section>
+<section class="detail" id="identify/3">
+  
+    <span id="identify/2"></span>
+  <div class="detail-header">
+    <a href="#identify/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">identify(user_id, traits, context \\ Context.new())</span>
+      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment.ex#L25" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+          </div>
+  <section class="docstring">
+<p>See <a href="Segment.Server.html#identify/3"><code class="inline">Segment.Server.identify/3</code></a>.</p>
   </section>
 </section>
 <section class="detail" id="page/1">
@@ -200,13 +291,33 @@ Functions          </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature">page(p)</span>
-      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment.ex#L26" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment.ex#L38" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
           </div>
   <section class="docstring">
 <p>See <a href="Segment.Server.html#page/1"><code class="inline">Segment.Server.page/1</code></a>.</p>
+  </section>
+</section>
+<section class="detail" id="page/4">
+  
+    <span id="page/2"></span>
+
+    <span id="page/3"></span>
+  <div class="detail-header">
+    <a href="#page/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">page(user_id, name, properties \\ %{}, context \\ Context.new())</span>
+      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment.ex#L37" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+          </div>
+  <section class="docstring">
+<p>See <a href="Segment.Server.html#page/4"><code class="inline">Segment.Server.page/4</code></a>.</p>
   </section>
 </section>
 <section class="detail" id="screen/1">
@@ -216,13 +327,33 @@ Functions          </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature">screen(s)</span>
-      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment.ex#L23" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment.ex#L29" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
           </div>
   <section class="docstring">
 <p>See <a href="Segment.Server.html#screen/1"><code class="inline">Segment.Server.screen/1</code></a>.</p>
+  </section>
+</section>
+<section class="detail" id="screen/4">
+  
+    <span id="screen/2"></span>
+
+    <span id="screen/3"></span>
+  <div class="detail-header">
+    <a href="#screen/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">screen(user_id, name, properties \\ %{}, context \\ Context.new())</span>
+      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment.ex#L28" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+          </div>
+  <section class="docstring">
+<p>See <a href="Segment.Server.html#screen/4"><code class="inline">Segment.Server.screen/4</code></a>.</p>
   </section>
 </section>
 <section class="detail" id="start/2">
@@ -232,7 +363,7 @@ Functions          </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature">start(type, args)</span>
-      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment.ex#L10" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment.ex#L11" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -279,13 +410,33 @@ callback.</p>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature">track(t)</span>
-      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment.ex#L21" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment.ex#L23" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
           </div>
   <section class="docstring">
 <p>See <a href="Segment.Server.html#track/1"><code class="inline">Segment.Server.track/1</code></a>.</p>
+  </section>
+</section>
+<section class="detail" id="track/4">
+  
+    <span id="track/2"></span>
+
+    <span id="track/3"></span>
+  <div class="detail-header">
+    <a href="#track/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">track(user_id, event, properties \\ %{}, context \\ Context.new())</span>
+      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment.ex#L22" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+          </div>
+  <section class="docstring">
+<p>See <a href="Segment.Server.html#track/4"><code class="inline">Segment.Server.track/4</code></a>.</p>
   </section>
 </section>
           </div>
