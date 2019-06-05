@@ -11,7 +11,7 @@ In `mix.exs`, add the `segment_elixir` dependency:
 def deps do
   # Get the latest from hex.pm.
   [
-    {:segment_elixir, "~> 2.0"},
+    {:segment, "~> 2.0.0-rc.2", hex: :segment_elixir}
   ]
 end
 ```
