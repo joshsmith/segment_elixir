@@ -95,7 +95,7 @@ Segment.Analytics
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#alias_user/3">alias_user(user_id, previous_id, context \\ Context.new())</a>
+    <a href="#alias_user/3">alias_user(previous_id, user_id, context \\ Context.new())</a>
   </div>
 </div>
 <div class="summary-row">
@@ -166,7 +166,7 @@ Functions          </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature">alias_user(a)</span>
-      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/analytics.ex#L42" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/analytics.ex#L34" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -182,8 +182,8 @@ Functions          </h1>
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature">alias_user(user_id, previous_id, context \\ Context.new())</span>
-      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/analytics.ex#L46" class="view-source" rel="help" title="View Source">
+    <h1 class="signature">alias_user(previous_id, user_id, context \\ Context.new())</span>
+      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/analytics.ex#L38" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -198,7 +198,7 @@ Functions          </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature">group(g)</span>
-      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/analytics.ex#L53" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/analytics.ex#L43" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -217,7 +217,7 @@ Functions          </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature">group(user_id, group_id, traits \\ %{}, context \\ Context.new())</span>
-      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/analytics.ex#L57" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/analytics.ex#L47" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -232,7 +232,7 @@ Functions          </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature">identify(i)</span>
-      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/analytics.ex#L19" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/analytics.ex#L16" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -251,7 +251,7 @@ Functions          </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature">identify(user_id, traits \\ %{}, context \\ Context.new())</span>
-      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/analytics.ex#L23" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/analytics.ex#L20" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -266,7 +266,7 @@ Functions          </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature">page(p)</span>
-      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/analytics.ex#L65" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/analytics.ex#L52" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -287,7 +287,7 @@ Functions          </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature">page(user_id, name \\ &quot;&quot;, properties \\ %{}, context \\ Context.new())</span>
-      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/analytics.ex#L69" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/analytics.ex#L56" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -302,7 +302,7 @@ Functions          </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature">screen(s)</span>
-      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/analytics.ex#L30" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/analytics.ex#L25" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -323,7 +323,7 @@ Functions          </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature">screen(user_id, name \\ &quot;&quot;, properties \\ %{}, context \\ Context.new())</span>
-      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/analytics.ex#L34" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/joshsmith/segment_elixir/blob/master/lib/segment/analytics.ex#L29" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
