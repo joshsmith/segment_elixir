@@ -73,7 +73,7 @@ defmodule Segment.Sandbox do
     Agent.get(__MODULE__, &Map.get(&1, :alias_calls))
   end
 
-  def alias_user(user_id, previous_id, context \\ Context.new()) do
+  def alias_user(previous_id, user_id, context \\ Context.new()) do
     a = %Alias{userId: user_id, previousId: previous_id, context: context}
     alias_user(a)
   end

@@ -43,7 +43,7 @@ defmodule Segment.Analytics do
     call(a)
   end
 
-  def alias_user(user_id, previous_id, context \\ Context.new) do
+  def alias_user(previous_id, user_id, context \\ Context.new) do
     %Segment.Alias{ userId: user_id,
                                   previousId: previous_id,
                                   context: context }

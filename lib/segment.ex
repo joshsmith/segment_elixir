@@ -28,7 +28,7 @@ defmodule Segment do
   defdelegate screen(user_id, name, properties \\ %{}, context \\ Context.new()), to: @api
   defdelegate screen(s), to: @api
 
-  defdelegate alias_user(user_id, previous_id, context \\ Context.new()), to: @api
+  defdelegate alias_user(previous_id, user_id, context \\ Context.new()), to: @api
   defdelegate alias_user(a), to: @api
 
   defdelegate group(user_id, group_id, traits \\ %{}, context \\ Context.new()), to: @api

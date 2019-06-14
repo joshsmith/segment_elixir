@@ -111,7 +111,7 @@ or the full way using a struct with all the possible options for the screen call
 > Note that we need to use `alias_user` here instead of Segment's `alias`, due to `alias` being reserved in Elixir.
 
 ```elixir
-Segment.alias_user(user_id, previous_id)
+Segment.alias_user(previous_id, user_id)
 ```
 
 or the full way using a struct with all the possible options for the alias call:
