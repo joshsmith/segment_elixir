@@ -35,7 +35,7 @@ Make sure you reset the sandbox state between tests.
 If you're using Phoenix this is as easy as adding:
 
 ```elixir
-# test/support/conn_case.ex
+# test/support/{conn_case.ex, data_case.ex, channel_case.ex} 
 setup tags
   :ok = Segment.Sandbox.checkout()
   ...
